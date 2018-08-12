@@ -1,0 +1,21 @@
+* {
+    background: darkslategray;
+}
+
+body {
+    height: 500px;
+}
+
+header {
+    margin: 20px auto;
+    width: 960px;
+}
+
+img {
+    height: 100px;
+    object-fit: contain;
+}
+
+#header_image {
+    
+}
