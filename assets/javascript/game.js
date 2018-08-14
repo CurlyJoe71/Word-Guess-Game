@@ -57,8 +57,13 @@ document.onkeyup = function(event) {
     numberOfGuesses--;
     console.log(gameBoard);
     console.log(wrongGuesses);
-    $('#game-board').html('<div>').text(gameBoard);
-    $('#wrong-guesses').html('<p>').text(wrongGuesses);
+
+    var gameBoardDiv = document.getElementById('game-board');
+    gameBoardDiv.textContent = gameBoard.join(' ');
+
+    var wrongGuessesDiv = document.getElementById('wrong-guesses');
+    wrongGuessesDiv.textContent = wrongGuesses.join(' ');
+    //If User wins the game...
     if (!gameBoard.includes('_')) {
         var audio = new Audio('/assets/soundfiles/Fantastic.mp3');
         audio.play();
