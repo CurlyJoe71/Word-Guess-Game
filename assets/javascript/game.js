@@ -27,11 +27,14 @@ for (let i = 0; i < answer.length; i++) {
 var remainingLetters = gameBoard.length;
 console.log(gameBoard);
 
+var guessCounter = document.getElementById('guess-counter');
+guessCounter.textContent = numberOfGuesses;
+
 //am I going to need some sort of indexOf to match the position of the userGuess and something else...
 
 
 document.onkeyup = function(event) {
-
+    
     var userGuess = event.key;
     if (gameBoard.includes(userGuess) || wrongGuesses.includes(userGuess)) {
         alert('You already guessed that one.');
@@ -50,21 +53,20 @@ document.onkeyup = function(event) {
     };
     
     if (!wrongGuesses.includes(userGuess) && !gameBoard.includes(userGuess)) {
-            wrongGuesses.push(userGuess);
+        wrongGuesses.push(userGuess);
     };
     
     remainingLetters--;
     numberOfGuesses--;
     console.log(gameBoard);
     console.log(wrongGuesses);
-
+    
     var gameBoardDiv = document.getElementById('game-board');
     gameBoardDiv.textContent = gameBoard.join(' ');
-
+    
     var wrongGuessesDiv = document.getElementById('wrong-guesses');
     wrongGuessesDiv.textContent = wrongGuesses.join(' ');
-
-    var guessCounter = document.getElementById('guess-counter');
+    
     guessCounter.textContent = numberOfGuesses;
     //If User wins the game...
     if (!gameBoard.includes('_')) {
@@ -74,4 +76,4 @@ document.onkeyup = function(event) {
     } else if (numberOfGuesses === 0) {
         alert('You lose');
     }
-    };
+};
