@@ -1,39 +1,50 @@
-* {
-    background: darkslategray;
+
+
+@font-face {
+    font-family: DoctorWho;
+    src: url(/assets/fonts/matt_smith_doctor_who.ttf);
 }
 
 body {
+    background: darkslategray;
     height: 500px;
     font-family: fantasy;
 }
 
-.image {
-    margin: 0 auto;
-    display: flex;
+.container {
+    margin: 20px auto;
+    width: 100%;
+    height: 800px;
+    display: float;
+    /* position: relative; */
+    color: white;
+    background-image: url('/assets/images/tardis_in_space.jpg');
+     
+}
+
+.special-font {
+    font-family: DoctorWho, Arial, sans-serif;
+    font-size: 120px;
+    color: white;
+    position: relative;
+    top:50px;
+    left: 20%;
+    background: none;
 }
 
 h1 {
     text-align: center;
     font-size: 32px;
+    margin: 30px auto;
+    background-image: none;
 }
 
 #game-board {
     text-align: center;
-    font-size: 24px;
+    font-size: 50px;
 }
 
 #wrong-guesses {
      text-align: center;
-    font-size: 24px;
+    font-size: 50px;
 }
-
-
-img {
-    height: 400px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* #header_image {
-    
-} */
