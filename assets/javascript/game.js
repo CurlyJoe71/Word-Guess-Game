@@ -37,13 +37,15 @@ document.onkeyup = function(event) {
         alert('You already guessed that one.');
         var audio = new Audio('/assets/soundfiles/Well_Isnt_That_Wizard.mp3');
         audio.play();
+    }
+    else {
+        var audio = new Audio('/assets/soundfiles/Alonsy.mp3');
+        audio.play();
     };
     //function to check guess with each letter
     for (var j = 0; j < answer.length; j++) {
         if (answer[j] === userGuess) {
             gameBoard[j] = userGuess;
-            var audio = new Audio('/assets/soundfiles/Alonsy.mp3');
-            audio.play();
         }
     };
     
@@ -57,7 +59,11 @@ document.onkeyup = function(event) {
     console.log(wrongGuesses);
     $('#game-board').html('<div>').text(gameBoard);
     $('#wrong-guesses').html('<p>').text(wrongGuesses);
+    if (!gameBoard.includes('_')) {
+        var audio = new Audio('/assets/soundfiles/Fantastic.mp3');
+        audio.play();
+        alert('You win!');
+    } else if (numberOfGuesses === 0) {
+        alert('You lose');
+    }
     };
-
-    console.log(`Checking to see if this runs.`);
-    
