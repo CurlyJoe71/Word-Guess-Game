@@ -4,16 +4,34 @@
 
 body {
     height: 500px;
+    font-family: fantasy;
 }
 
-header {
-    margin: 20px auto;
-    width: 960px;
+.image {
+    margin: 0 auto;
+    display: flex;
 }
+
+h1 {
+    text-align: center;
+    font-size: 32px;
+}
+
+#game-board {
+    text-align: center;
+    font-size: 24px;
+}
+
+#wrong-guesses {
+     text-align: center;
+    font-size: 24px;
+}
+
 
 img {
-    height: 100px;
-    object-fit: contain;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* #header_image {

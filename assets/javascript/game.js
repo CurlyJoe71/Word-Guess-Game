@@ -33,20 +33,31 @@ console.log(gameBoard);
 document.onkeyup = function(event) {
 
     var userGuess = event.key;
+    if (gameBoard.includes(userGuess) || wrongGuesses.includes(userGuess)) {
+        alert('You already guessed that one.');
+        var audio = new Audio('/assets/soundfiles/Well_Isnt_That_Wizard.mp3');
+        audio.play();
+    };
     //function to check guess with each letter
     for (var j = 0; j < answer.length; j++) {
         if (answer[j] === userGuess) {
             gameBoard[j] = userGuess;
+            var audio = new Audio('/assets/soundfiles/Alonsy.mp3');
+            audio.play();
         }
-    }
+    };
+    
     if (!wrongGuesses.includes(userGuess) && !gameBoard.includes(userGuess)) {
             wrongGuesses.push(userGuess);
-    }
-        
+    };
     
     remainingLetters--;
     numberOfGuesses--;
     console.log(gameBoard);
     console.log(wrongGuesses);
+    $('#game-board').html('<div>').text(gameBoard);
+    $('#wrong-guesses').html('<p>').text(wrongGuesses);
     };
+
+    console.log(`Checking to see if this runs.`);
     
