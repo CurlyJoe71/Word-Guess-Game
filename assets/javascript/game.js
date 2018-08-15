@@ -38,11 +38,11 @@ document.onkeyup = function(event) {
     var userGuess = event.key;
     if (gameBoard.includes(userGuess) || wrongGuesses.includes(userGuess)) {
         alert('You already guessed that one.');
-        var audio = new Audio('../assets/soundfiles/Well_Isnt_That_Wizard.mp3');
+        var audio = new Audio('/Word-Guess-Game/assets/soundfiles/Well_Isnt_That_Wizard.mp3');
         audio.play();
     }
     else {
-        var audio = new Audio('../assets/soundfiles/Alonsy.mp3');
+        var audio = new Audio('/Word-Guess-Game/assets/soundfiles/Alonsy.mp3');
         audio.play();
     };
     //function to check guess with each letter
@@ -70,7 +70,7 @@ document.onkeyup = function(event) {
     guessCounter.textContent = numberOfGuesses;
     //If User wins the game...
     if (!gameBoard.includes('_')) {
-        var audio = new Audio('../assets/soundfiles/Fantastic.mp3');
+        var audio = new Audio('/Word-Guess-Game/assets/soundfiles/Fantastic.mp3');
         audio.play();
         alert('You win!');
     } else if (numberOfGuesses === 0) {
