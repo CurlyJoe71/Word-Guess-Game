@@ -8,6 +8,7 @@
     <title>Hangman!</title>
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <source src="assets/soundfiles/Alonsy.mp3" type="audio/mp3">
     <source src="assets/fonts/matt_smith_doctor_who.ttf">
     <source src="assets/images/tardis_in_space.jpg" type="jpg">
@@ -15,9 +16,10 @@
 
 <body>
     <div class="container">
-        <p class="special-font">DOCTOR WHO HANGMAN</p>
+        <p class="special-font" id="special-font">DOCTOR WHO HANGMAN</p>
+        <div><p id="game-init"></p></div>
         <div>
-            <h1>Game Board</h1>
+            <h1>Secret Word</h1>
         </div>
         <div id="game-board"></div>
         <div>

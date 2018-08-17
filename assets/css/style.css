@@ -6,30 +6,33 @@
 }
 
 body {
-    background: darkslategray;
-    height: 500px;
-    font-family: fantasy;
+    /* background: darkslategray;
+    height: 500px; */
+    background-image: url('../images/tardis_in_space.jpg');
 }
 
 .container {
-    margin: 20px auto;
+    font-family: fantasy;
+    margin: 0px auto;
     width: 100%;
-    height: 800px;
-    display: float;
-    /* position: relative; */
+    height: 900px;
+
     color: white;
-    background-image: url('../images/tardis_in_space.jpg');
-     
+    background-size: 100%;
+    background-repeat: no-repeat;
+    text-align: center;
+    text-shadow: 2px 5px 10px rgb(219, 105, 149);
 }
 
 .special-font {
     font-family: DoctorWho, Arial, sans-serif;
     font-size: 120px;
     color: white;
-    position: relative;
+    /* position: relative;
     top:50px;
-    left: 20%;
+    left: 20%; */
     background: none;
+    text-shadow: 2px 5px 10px #ff0000;
 }
 
 h1 {
@@ -41,10 +44,34 @@ h1 {
 
 #game-board {
     text-align: center;
-    font-size: 50px;
+    font-size: 70px;
+    animation: flicker 2s infinite;
 }
 
 #wrong-guesses {
      text-align: center;
-    font-size: 50px;
+    font-size: 70px;
 }
+
+@keyframes flicker {
+        0% {opacity:0;}
+        9% {opacity:0;}
+        10% {opacity:.5;}
+        13% {opacity:0;}
+        20% {opacity:.5;}
+        25% {opacity:1;}
+  }
+
+@keyframes fadeInSlow {
+    0% {
+      opacity: 0;
+    }
+  
+    45% {
+      opacity: 0.5;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
