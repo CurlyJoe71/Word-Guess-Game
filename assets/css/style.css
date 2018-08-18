@@ -82,3 +82,9 @@ h1 {
       opacity: 1;
     }
   }
+
+  @media (max-width: 575.98px) {
+      #wins {
+          float: left;
+      }
+  }
