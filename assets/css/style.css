@@ -45,7 +45,7 @@ h1 {
 #game-board {
     text-align: center;
     font-size: 70px;
-    animation: flicker 2s infinite;
+    /* animation: flicker 2s infinite; */
 }
 
 #wrong-guesses {
@@ -62,12 +62,16 @@ h1 {
         25% {opacity:1;}
   }
 
+.run-animation {
+    animation: fadeInSlow 3s;
+}
+
 @keyframes fadeInSlow {
     0% {
       opacity: 0;
     }
   
-    45% {
+    30% {
       opacity: 0.5;
     }
   

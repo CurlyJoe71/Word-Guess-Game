@@ -54,7 +54,7 @@ var fontColorChangeBad = function() {
 var winChecker = function() {
     //If User wins the game...
     if (!gameBoard.includes('_')) {
-        var audio = new Audio('/soundfiles/Fantastic.mp3');
+        var audio = new Audio('../soundfiles/Fantastic.mp3');
         audio.play();
         // alert('You win!');
         wins++;
@@ -106,19 +106,25 @@ var startGame = function() {
         var userGuess = event.key;
         if (gameBoard.includes(userGuess) || wrongGuesses.includes(userGuess)) {
             alert('You already guessed that one.');
-            var audio = new Audio('/soundfiles/Well_Isnt_That_Wizard.mp3');
+            var audio = new Audio('../soundfiles/Well_Isnt_That_Wizard.mp3');
             audio.play();
         }
         else {
-            var audio = new Audio('/soundfiles/Alonsy.mp3');
+            var audio = new Audio('../soundfiles/Alonsy.mp3');
             audio.play();
         };
     //function to check guess with each letter
         for (var j = 0; j < answer.length; j++) {
             if (answer[j] === userGuess) {
                 gameBoard[j] = userGuess;
-                fontColorChangeGood();
+                gameBoardDiv.classList.add("run-animation");
+
                 gameBoardDiv.textContent = gameBoard.join(' ');
+
+                setTimeout(function() {
+                    gameBoardDiv.classList.remove("run-animation");
+                }, 3000);
+                fontColorChangeGood();
                 winChecker();
             }
         };
