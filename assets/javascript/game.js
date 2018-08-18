@@ -1,5 +1,5 @@
 // declaring variables
-var wordList = ['tardis', 'companion', 'doctor', 'dalek', 'cyberman', 'silence', 'universe', 'travel', 'hero', 'time', 'history', 'future'];
+var wordList = ['tardis', 'companion', 'doctor', 'dalek', 'cyberman', 'silence', 'universe', 'travel', 'hero', 'time', 'history', 'future', 'space'];
 
 var answer = [];
 
@@ -21,9 +21,23 @@ var gameInit = document.getElementById('game-init');
 
 var wins = 0;
 
+var winsDiv = document.getElementById('wins');
+
 var losses = 0;
 
+var lossesDiv = document.getElementById('losses');
+
 var specialFont = document.getElementById('special-font');
+
+var alonsyAudio = document.getElementById('alonsy');
+
+var fantasticAudio = document.getElementById('fantastic');
+
+var wizardAudio = document.getElementById('wizard');
+
+var exterminateAudio = document.getElementById('exterminate');
+
+var screwdriverAudio = document.getElementById('screwdriver');
 
 // function to get random word and convert to array;
 var secretWordFunction = function() {
@@ -54,8 +68,7 @@ var fontColorChangeBad = function() {
 var winChecker = function() {
     //If User wins the game...
     if (!gameBoard.includes('_')) {
-        var audio = new Audio('../soundfiles/Fantastic.mp3');
-        audio.play();
+        fantasticAudio.play();
         // alert('You win!');
         wins++;
         numberOfGuesses = 10;
@@ -73,6 +86,7 @@ var winChecker = function() {
         // startGame();
     } else if (numberOfGuesses === 0) {
         losses++;
+        exterminateAudio.play();
         numberOfGuesses = 10;
         guessCounter.textContent = numberOfGuesses;
         userGuess = ' ';
@@ -98,6 +112,8 @@ var startGame = function() {
     wrongGuessesDiv.textContent = wrongGuesses.join(' ');
     numberOfGuesses = 10;
     guessCounter.textContent = numberOfGuesses;
+    winsDiv.textContent = 'Wins: ' + wins;
+    lossesDiv.textContent = 'Losses: ' + losses;
     gameInit.textContent = ('');
     gameBoard = [];
     gameBoardDiv.textContent = gameBoard.join(' ');
@@ -106,17 +122,13 @@ var startGame = function() {
         var userGuess = event.key;
         if (gameBoard.includes(userGuess) || wrongGuesses.includes(userGuess)) {
             alert('You already guessed that one.');
-            var audio = new Audio('../soundfiles/Well_Isnt_That_Wizard.mp3');
-            audio.play();
-        }
-        else {
-            var audio = new Audio('../soundfiles/Alonsy.mp3');
-            audio.play();
+            wizardAudio.play();
         };
     //function to check guess with each letter
         for (var j = 0; j < answer.length; j++) {
             if (answer[j] === userGuess) {
                 gameBoard[j] = userGuess;
+                alonsyAudio.play();
                 gameBoardDiv.classList.add("run-animation");
 
                 gameBoardDiv.textContent = gameBoard.join(' ');
@@ -130,6 +142,7 @@ var startGame = function() {
         };
     //adding incorrect letters to screen
     if (!wrongGuesses.includes(userGuess) && !gameBoard.includes(userGuess)) {
+        screwdriverAudio.play();
         wrongGuesses.push(userGuess);
         fontColorChangeBad();
         wrongGuessesDiv.textContent = wrongGuesses.join(' ');

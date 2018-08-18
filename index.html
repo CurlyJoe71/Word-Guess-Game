@@ -9,13 +9,28 @@
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <source src="assets/soundfiles/Alonsy.mp3" type="audio/mp3">
+    <source src="../soundfiles/Alonsy.mp3" type="audio/mp3">
     <source src="assets/fonts/matt_smith_doctor_who.ttf">
     <source src="assets/images/tardis_in_space.jpg" type="jpg">
 </head>
 
 <body>
-    <div class="container">
+    <audio id="alonsy">
+        <source src="assets/soundfiles/Alonsy.mp3" type="audio/mp3">
+    </audio>
+    <audio id="fantastic">
+        <source src="assets/soundfiles/Fantastic.mp3" type="audio/mp3">
+    </audio>
+    <audio id="wizard">
+        <source src="assets/soundfiles/Well_Isnt_That_Wizard.mp3" type="audio/mp3">
+    </audio>
+    <audio id="exterminate">
+        <source src="assets/soundfiles/Exterminate.mp3" type="audio/mp3">
+    </audio>
+    <audio id="screwdriver">
+        <source src="assets/soundfiles/screwdriver.mp3" type="audio/mp3">
+    </audio>
+    <div class="container container-fluid img-fluid">
         <p class="special-font" id="special-font">DOCTOR WHO HANGMAN</p>
         <div><p id="game-init"></p></div>
         <div>
@@ -28,6 +43,14 @@
         <div id="wrong-guesses"></div>
         <div>
             <h1>You have <span id="guess-counter"></span> guesses remaining.</h1> 
+        </div>
+        <div class="row">
+        <div class="col-md-6">
+            <p id="wins">Wins:</p>
+        </div>
+        <div class="col-md-6">
+            <p id="losses">Losses:</p>
+        </div>
         </div>
     </div>
     
